@@ -1,2 +1,13 @@
+cool! wp for back and nextjs for front
+
+## Prereq
+
 1. Install Docker
-2. `docker-compose up`
+
+## Dev
+
+1. `docker-compose up`
+
+## Prod
+
+_None setup yet_
