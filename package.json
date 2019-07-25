@@ -1,0 +1,38 @@
+{
+  "name": "wp-nextjs",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathanhudak/wp-nextjs.git"
+  },
+  "keywords": [
+    "wordpress",
+    "nextjs",
+    "headless",
+    "wordpress",
+    "node",
+    "react"
+  ],
+  "author": "Jonathan Hudak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonathanhudak/wp-nextjs/issues"
+  },
+  "homepage": "https://github.com/jonathanhudak/wp-nextjs#readme",
+  "dependencies": {
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^9.0.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}

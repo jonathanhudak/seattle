@@ -1,0 +1,6 @@
+# Dockerfile
+README.md
+docker-compose.yml
+# package.json
+# package-lock.json
+.next
