@@ -1,12 +1,27 @@
-FROM node:12
+FROM node:alpine
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-COPY package.json package-lock.json ./
+# Install PM2 globally
+# RUN npm install --global pm2
+
+# Copy "package.json" and "package-lock.json" before other files
+# Utilise Docker cache to save re-installing dependencies if unchanged
+COPY ./package*.json ./
+
 RUN npm install
+# RUN npm install --production
 
-COPY . .
+# Copy all files
+COPY ./ ./
 
-# # RUN npm run build
+# Build app
+RUN npm run build
+
+# Expose the listening port
+EXPOSE 3000
 
 CMD ["npm", "run", "dev"]
+
+# Launch app with PM2
+# CMD [ "pm2-runtime", "start", "npm", "--", "start" ]

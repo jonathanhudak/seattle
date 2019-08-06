@@ -24,17 +24,33 @@ services:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
+
   frontend:
     depends_on:
       - wordpress
     volumes:
       - .:/usr/src/app
-    build:
-      context: .
+    build: ./
     ports:
       - 3000:3000 # host:container
     restart: always
     links:
       - "wordpress"
+    environment:
+      - VIRTUAL_HOST=wpnxt.test
+      - VIRTUAL_PORT=3000
+
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./certs:/etc/nginx/certs
+    depends_on:
+      - frontend
+
 volumes:
   db_data: {}

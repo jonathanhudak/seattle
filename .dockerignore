@@ -1,6 +1,11 @@
-# Dockerfile
-README.md
-docker-compose.yml
-# package.json
-# package-lock.json
+.git
+.gitignore
+**/.gitkeep
+**/.DS_Store
 .next
+.dockerignore
+Dockerfile
+docker-compose.yml
+node_modules
+nginx
+README.md
