@@ -9,8 +9,9 @@ services:
       - 3000:3000 # host:container
     restart: always
     environment:
-      - VIRTUAL_HOST=wpnxt.test
+      - VIRTUAL_HOST=seattle.test
       - VIRTUAL_PORT=3000
+      - apiEndpoint=https://api.seattle.net/
 
   nginx:
     image: jwilder/nginx-proxy
