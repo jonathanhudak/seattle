@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
     "dev": "next",
     "build": "next build",
     "start": "next start"
@@ -33,6 +34,26 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "@emotion/core": "^10.0.16",
+    "@emotion/styled": "^10.0.15",
+    "@mdx-js/react": "^1.2.2",
+    "@rebass/preset": "^4.0.5",
+    "@theme-ui/presets": "^0.2.30",
+    "emotion-theming": "^10.0.14",
+    "jest": "^24.9.0",
+    "jest-image-snapshot": "^2.9.0",
+    "jest-puppeteer": "^4.3.0",
+    "nodemon": "^1.19.1",
+    "pptr-testing-library": "^0.4.0",
+    "puppeteer": "^1.19.0",
+    "rebass": "^4.0.5",
+    "styled-system": "^5.1.1",
+    "theme-ui": "^0.2.36"
+  },
+  "jest": {
+    "preset": "jest-puppeteer",
+    "setupFilesAfterEnv": [
+      "<rootDir>/tests/setup.js"
+    ]
   }
 }
