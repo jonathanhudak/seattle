@@ -10,8 +10,8 @@ WORKDIR /usr/src/app
 COPY ./package-lock.json ./
 COPY ./package.json ./
 
-RUN npm install
-# RUN npm install --production
+# RUN npm install
+RUN npm install --production
 
 # Copy all files
 COPY ./ ./
@@ -22,7 +22,7 @@ RUN npm run build
 # Expose the listening port
 EXPOSE 3000
 
-CMD ["npm", "run", "dev"]
+# CMD ["npm", "run", "dev"]
 
 # Launch app with PM2
-# CMD [ "pm2-runtime", "start", "npm", "--", "start" ]
+CMD [ "npm", "run", "start" ]
